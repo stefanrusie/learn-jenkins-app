@@ -23,9 +23,9 @@ pipeline {
             }
         }
         */
-
-
-        stage('Test') {
+        stage('Tests'){
+            parralel{
+                        stage('Unit Tests') {
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -61,6 +61,8 @@ pipeline {
         }
     }
 
+            }
+        }
     post {
         always {
             junit 'jest-results/junit.xml'
