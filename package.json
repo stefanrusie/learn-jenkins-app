@@ -36,6 +36,15 @@
       "last 1 safari version"
     ]
   },
+"jest": {
+  "reporters": [
+    "default",
+    ["jest-junit", {
+      "outputDirectory": "jest-results",
+      "outputName": "junit.xml"
+    }]
+  ]
+}
   "devDependencies": {
     "@playwright/test": "^1.39.0",
     "@types/node": "^20.8.6"
